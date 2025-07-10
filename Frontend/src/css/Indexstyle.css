@@ -1,0 +1,289 @@
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css');
+.dividerLine {
+    height: 2px;
+    background: #eee;
+    margin: 0 24px;
+}
+header{
+    background: white;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 70px;
+}
+header .left {
+    display: flex;
+    align-items: center;
+
+}
+header .left nav{
+    margin-left:50px;
+}
+header .left .logoName{
+    margin-left: 20px;
+    font-size:18px;
+    color: #24252c;
+}
+header .left h1 {
+    font-size: 15px;
+    color: #24252c80;
+    margin-left: 20px;
+    transition: letter-spacing 0.3s ease-in-out;
+}
+header .left a {
+    font-size: 20px;
+    color: #24252c80;
+    margin-left: 40px;
+    transition: letter-spacing 0.3s ease-in-out;
+}
+header .left h1:hover{
+    letter-spacing: 2px;
+    color: #24252c;
+}
+header .left a:hover{
+    letter-spacing: 2px;
+    color: #24252c;
+}
+
+header .left img{
+    width: 50px;
+    height: 50px;
+}
+/*搜索框相关样式*/
+header .SearchBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 2px solid white; /* Adds a white border */
+    border-radius: 5px; /* Optional: Rounds the corners */
+    padding: 5px; /* Optional: Adds spacing inside the border */
+}
+
+header .SearchBox .icon {
+    width: 16px;
+    height: 16px;
+    opacity: 0.6;
+    stroke: currentColor;
+}
+header .SearchBox:focus-within {
+    border-color: black; /* 变成黑色边框 */
+}
+input[type="search"]::placeholder {
+    color: black; /*提示字体颜色*/
+}
+input[type="search"]:focus {
+    outline: none; /* 移除聚焦时的外边框 */
+}
+header .SearchBox input[type="search"]:focus + .kbd {
+    visibility: hidden;  /* 点击搜索框的时候隐藏ctrl*/
+}
+header .SearchBox input[type="search"]:focus + .kbd + .kbd {
+    visibility: hidden;  /* 点击搜索框的时候隐藏K*/
+}
+/*搜索框相关样式*/
+header .rightBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header .rightBox .avatar1 {
+    margin-left: 20px;
+    border-radius: 50%; /* 设置为圆形 */
+    display: inline-block; /* 确保图片与其他元素同行显示 */
+    height: 3rem; /* 设置图片高度 */
+    width: 3rem; /* 设置图片宽度，与高度相等 */
+    object-fit: cover; /* 确保图片内容适应圆形容器 */
+}
+header .rightBox .fi-rr-shopping-cart {
+    font-size: 1.7rem;
+    margin-top: 10px;
+}
+
+/*头像详细信息css*/
+header .rightBox .avatar2 {
+    margin-left: 15px;
+    border-radius: 50%; /* 设置为圆形 */
+    display: inline-block; /* 确保图片与其他元素同行显示 */
+    height: 3rem; /* 设置图片高度 */
+    width: 3rem; /* 设置图片宽度，与高度相等 */
+    object-fit: cover; /* 确保图片内容适应圆形容器 */
+}
+header .rightBox .user-menu{
+    position: absolute;
+    top: 60px;
+    right: 70px;
+    width: 300px;
+    height: 300px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    padding: 24px 0 12px 0;
+    z-index: 100;
+    animation: fadeIn .2s;
+}
+header .rightBox .user-info{
+    display: flex;
+    align-items: center;
+    padding: 0 24px 12px 24px;
+}
+
+header .rightBox .user-name{
+    margin-left: 23px;
+    font-size: 15px;
+    color: #24252c;
+    font-weight: bold;
+}
+header .rightBox .user-divider {
+    height: 1px;
+    background: #eee;
+    margin: 0 24px 12px 24px;
+}
+header .rightBox .user-menu-item:hover {
+    background: #f5f5f5;
+}
+/*图标大小*/
+header .rightBox .user-menu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 24px 12px 24px;
+    font-size: 16px;
+    color: #222;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+/*图标大小*/
+
+/*以下是主体部分*/
+
+/*主体部分的头部*/
+main .banner{
+    display:flex;
+    margin-left: 140px;
+    height: 80px;
+}
+main .banner .banner-kind{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #24252c;
+    margin-bottom: 10px;
+}
+main .banner .banner-kind .kind-item{
+    position: relative;
+    padding: 10px 0;
+    margin: 0 20px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #24252c;
+    background: none;
+    border: none;
+    outline: none;
+    transition: color 0.2s;
+}
+.kind-item.active {
+    color: #222;
+}
+
+.kind-item.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 3px;
+    background: #222;
+    border-radius: 2px;
+}
+/*筛选部分*/
+main .fliSelect{
+    display: flex;
+    align-items: center;
+    height: 70px;
+    gap: 20px;
+    margin-left: 160px;
+}
+main .fliSelect .fliKind{
+    display: flex;
+    padding: 10px 0;
+    height: 70px;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+/*商品部分*/
+main .itemShow{
+    display: grid;
+    grid-template-columns: repeat(4,23%);
+    margin-left: 160px;
+    margin-bottom: 45px;
+    gap: 32px 24px;
+
+}
+main .itemShow .item{
+    width:311px;
+    height: 320px;
+}
+main .itemShow .item-img{
+    width: 311px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+main .itemShow .item-img img{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+}
+main .itemShow .item .item-name{
+    font-size: 18px;
+    font-weight: 600;
+    color: #24252c;
+    margin-top: 5px;
+}
+.item-detail{
+    height: 48px;
+    font-size: 16px;
+    display:-webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    color: #24252c;
+}
+.item-price{
+    margin-top:5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.item-price span{
+    font-size: 19px;
+    font-weight: 600;
+    color:#ff8936;
+}
+.item-total-sell{
+    font-size: 16px;
+    color: #24252c80;
+
+}
+.join{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 48px;
+    color: white;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
