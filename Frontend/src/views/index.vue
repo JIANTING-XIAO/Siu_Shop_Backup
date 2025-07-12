@@ -1,7 +1,6 @@
 <script setup>
 import '../css/Indexstyle.css'
-import axios from "axios";
-import {focusInput, showMenu,kinds,selectKind,products} from "@/js/index.js";
+import {focusInput, showMenu,kinds,selectKind,products,currentPage,total,totalPage,pageSize,fetchProducts,goNextPage,goPreviousPage} from "@/js/index.js";
 import {useUserStore} from "@/pinia/user.js";
 import {onMounted} from "vue";
 const userStore = useUserStore()
@@ -11,14 +10,7 @@ onMounted(() => {
     userStore.fetchUserInfo()
   }
   //获取商品信息
-  axios.get("/product").then(res=>{
-    console.log("获取商品信息成功:", res.data);
-    if (res.data&&res.data.product){
-      products.value=res.data.product
-    }
-  }).catch(err => {
-    console.error("获取商品信息失败:", err);
-  })
+  fetchProducts()
 })
 
 
@@ -114,13 +106,9 @@ onMounted(() => {
     <!--商品展示-->
     <!-- 放在 main 的最下方 -->
     <div class="join">
-      <button class="join-item btn">«</button>
-      <button class="join-item btn">1</button>
-      <button class="join-item btn">2</button>
-      <button class="join-item btn btn-disabled">...</button>
-      <button class="join-item btn">99</button>
-      <button class="join-item btn">100</button>
-      <button class="join-item btn">»</button>
+      <button class="join-item btn" :disabled="currentPage === 1" @click="goPreviousPage">«</button>
+      <span class="join-item btn btn-disabled">{{ currentPage }} / {{ totalPage }}</span>
+      <button class="join-item btn" :disabled="currentPage === totalPage" @click="goNextPage">»</button>
     </div>
 <!--分页结束-->
 

@@ -101,6 +101,10 @@ header .rightBox .fi-rr-shopping-cart {
     font-size: 1.7rem;
     margin-top: 10px;
 }
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none; /* 移除默认样式 */
+    display: none; /* 隐藏取消按钮 */
+}
 
 /*头像详细信息css*/
 header .rightBox .avatar2 {
