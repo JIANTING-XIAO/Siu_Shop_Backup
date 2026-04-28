@@ -291,3 +291,56 @@ main .itemShow .item .item-name{
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
 }
+
+/* 搜索加载状态样式 */
+.search-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.search-loading p {
+    color: #666;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* 空搜索结果样式 */
+.no-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.no-results p {
+    color: #666;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.no-results p:first-child {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+}
